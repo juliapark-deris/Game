@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flying Takoyaki</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hud">
+      <span>Score: <strong id="score">0</strong></span>
+      <span>Best: <strong id="best">0</strong></span>
+    </section>
+
+    <canvas id="gameCanvas" width="960" height="540" aria-label="Flying Takoyaki game"></canvas>
+
+    <section id="startOverlay" class="overlay">
+      <h1>Flying Takoyaki</h1>
+      <p>스페이스 / 클릭으로 점프해서 꼬치를 피하세요.</p>
+      <button id="startButton" type="button">Start</button>
+    </section>
+
+    <section id="gameOverOverlay" class="overlay hidden">
+      <h2>Game Over</h2>
+      <p>점수: <strong id="finalScore">0</strong></p>
+      <button id="restartButton" type="button">Restart</button>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>
