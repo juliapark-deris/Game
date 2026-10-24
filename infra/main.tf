@@ -51,6 +51,7 @@ resource "azurerm_storage_blob" "site_files" {
   storage_container_id   = "${azurerm_storage_account.site.id}/blobServices/default/containers/$web"
   type                   = "Block"
   source                 = "${local.project_root}/${each.value}"
+  content_md5            = filemd5("${local.project_root}/${each.value}")
   content_type = lookup(
     local.content_types,
     lower(regex("[^.]+$", each.value)),
